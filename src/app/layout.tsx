@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "~/providers/theme-provider";
+import type {ReactNode} from "react";
 
 export const metadata: Metadata = {
 	title: "Create T3 App",
@@ -14,6 +15,10 @@ const geist = Geist({
 	subsets: ["latin"],
 	variable: "--font-geist-sans",
 });
+
+type RootLayoutProps = {
+	children: ReactNode[],
+}
 
 
 export default function RootLayout({ children }: RootLayoutProps) {
